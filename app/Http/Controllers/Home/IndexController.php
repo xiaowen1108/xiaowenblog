@@ -188,4 +188,37 @@ class IndexController extends CommonController
             return false;
         }
     }
+    public function moni()
+    {
+        $id = 21;
+        $info = Article::find(21)->toArray();
+        $info['created_at'] = date('Y-m-d H:i',$info['created_at']);
+        //统计+1
+        Article::where('id',$id)->increment('hits',1);
+        $like = Cookie::get('wen_like');
+        $like = $like ? unserialize($like) : array();
+        $info['is_like'] = 0;
+        if(in_array($id,$like)){
+            $info['is_like'] = 1;
+        }
+        $_tags = explode(',',$info['tags']);
+        $seminar = array();
+        if($_tags){
+            //相关文章 3篇
+            foreach($_tags as $v){
+                $ids  = Article::where('name','like','%'.$v.'%')->lists('id')->toArray();
+                $seminar = array_merge($ids,$seminar);
+            }
+            $seminar = array_unique($seminar);//去重
+        }
+        if($seminar){
+            $seminar_articles = Article::whereIn('id',$seminar)->where('id','>=',(Article::max('id')-Article::min('id'))*RAND(0,10000)/10000+Article::min('id'))->where('id','<>',$id)->take(3)->get()->toArray();
+        }else{
+            $seminar_articles = Article::where('cid',$info['cid'])->where('id','>=',(Article::max('id')-Article::min('id'))*RAND(0,10000)/10000+Article::min('id'))->where('id','<>',$id)->take(3)->get()->toArray();
+        }
+        if($this->is_pjax()){
+            return view('home.article_pjax',['cat_id'=>$info['cid'],'info'=>$info,'title'=>$info['name'].' - 小文博客','description'=>$info['description'],'keywords'=>$info['tags'],'_tags'=>$_tags,'seminar_articles'=>$seminar_articles]);
+        }
+        return view('home.moni',['cat_id'=>$info['cid'],'info'=>$info,'title'=>$info['name'].' - 小文博客','description'=>$info['description'],'keywords'=>$info['tags'],'_tags'=>$_tags,'seminar_articles'=>$seminar_articles]);
+    }
 }

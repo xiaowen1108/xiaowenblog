@@ -1,4 +1,4 @@
-﻿@extends('home.layout.common')
+@extends('home.layout.common')
 @section('content')
 <div id="article">
 	<div class="posts">
@@ -7,7 +7,7 @@
 			<div class="loop">
 				<div class="content">
 					<div class="content-img">
-						<a href="{{url('art')}}/{{$v['id']}}" title="{{$v['name']}}"><img src="{{asset('resources/views/home/style/images/default.gif')}}" data-echo="{{$v['cover']}}" alt="{{$v['name']}}" class="thumbnail thumbnailxm"/></a>
+						<a href="{{url('art')}}/{{$v['id']}}" title="{{$v['name']}}"><img src="{{asset('resources/views/home/style/images/default.gif')}}" data-echo="{{$v['cover']}}?imageView2/1/w/210/h/130" alt="{{$v['name']}}" class="thumbnail thumbnailxm"/></a>
 					</div>
 					<div class="content_body">
 						<h2><a href="{{url('art')}}/{{$v['id']}}" title="{{$v['name']}}">{{$v['name']}}</a>
@@ -73,7 +73,7 @@
 						if(v.is_like ==1){
 							style = 'style="color:#f66"';
 						}
-						html += '<div class="loop"><div class="content"><div class="content-img"><a href="{{url('art')}}/'+v.id+'" title="'+v.name+'"><img data-echo="'+v.cover+'"  src="{{asset('resources/views/home/style/images/default.gif')}}" alt="'+v.name+'" class="thumbnail thumbnailxm"/></a></div><div class="content_body"><h2><a href="{{url('art')}}/'+v.id+'" title="'+v.name+'">'+v.name+'</a></h2><p>'+v.description+'</p></div></div><div class="clear"></div><div class="content_infor"><span class="more"><a href="{{url('art')}}/'+v.id+'" title="阅读全文" >阅读全文 <i class=" icon-angle-circled-right" style="font-size: 13px;"></i></a></span><span class="auther"><img alt="小文博客" src="{{asset('resources/views/home/style/images/author.jpg')}}" class="avatar avatar-96 photo" height="96" width="96" />小文</span><span><i class="icon-clock"></i>'+v.created_at+'</span> <span><i class="icon-align-left"></i> '+v.hits+'人围观</span><span><a title="喜欢就赞一个！" href="javascript:;" aid="'+v.id+'" class="favorite"><i class="icon-thumbs-up" '+style+'></i> <span class="count">'+v.like_num+'</span></a></span></div></div>';
+						html += '<div class="loop"><div class="content"><div class="content-img"><a href="{{url('art')}}/'+v.id+'" title="'+v.name+'"><img data-echo="'+v.cover+'?imageView2/1/w/210/h/130"  src="{{asset('resources/views/home/style/images/default.gif')}}" alt="'+v.name+'" class="thumbnail thumbnailxm"/></a></div><div class="content_body"><h2><a href="{{url('art')}}/'+v.id+'" title="'+v.name+'">'+v.name+'</a></h2><p>'+v.description+'</p></div></div><div class="clear"></div><div class="content_infor"><span class="more"><a href="{{url('art')}}/'+v.id+'" title="阅读全文" >阅读全文 <i class=" icon-angle-circled-right" style="font-size: 13px;"></i></a></span><span class="auther"><img alt="小文博客" src="{{asset('resources/views/home/style/images/author.jpg')}}" class="avatar avatar-96 photo" height="96" width="96" />小文</span><span><i class="icon-clock"></i>'+v.created_at+'</span> <span><i class="icon-align-left"></i> '+v.hits+'人围观</span><span><a title="喜欢就赞一个！" href="javascript:;" aid="'+v.id+'" class="favorite"><i class="icon-thumbs-up" '+style+'></i> <span class="count">'+v.like_num+'</span></a></span></div></div>';
 
 					})
 					$("#page").before(html);

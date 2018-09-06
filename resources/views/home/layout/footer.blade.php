@@ -44,11 +44,6 @@
     <!--wp-compress-html no compression-->
 </div>
 <a href="#0" class="cd-top">Top</a>
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var ajaxcomment = {"ajax_url":"http:\/\/www.vfilmtime.com\/wp-admin\/admin-ajax.php","order":"desc","formpostion":"bottom"};
-    /* ]]> */
-</script>
 <script type='text/javascript' src='{{asset('resources/views/home/style/js/app.js')}}'></script>
 <script type='text/javascript' src='{{asset('resources/views/home/style/js/wp-embed.min.js')}}'></script>
 <script type="text/javascript" src="{{asset('resources/views/home/style/js/owl.carousel.min.js')}}"></script>

@@ -52,4 +52,5 @@ Route::group(['namespace'=>'Home'], function () {
     Route::post('/ajax_article', 'IndexController@ajax_article');
     Route::post('/ajax_cat_article', 'IndexController@ajax_cat_article');
     Route::get('/tag/{tag}', 'IndexController@tag');
+    Route::get('/moni', 'IndexController@moni');
 });

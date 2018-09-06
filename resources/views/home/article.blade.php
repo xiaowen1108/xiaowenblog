@@ -1,4 +1,4 @@
-﻿@extends('home.layout.common')
+@extends('home.layout.common')
 @section('left_bar')
     @parent
 @endsection
@@ -48,7 +48,7 @@
 	<div class="author-avater"><img alt="" src="{{asset('resources/views/home/style/images/author.jpg')}}" class="avatar avatar-50 photo" height="50" width="50"></div>
 	<div class="author-des">
 		<div class="author-meta">
-			<span class="post-author-name">小文</span><span class="post-author-url"><a href="javascript:;" rel="nofollow" target="_blank">就是那么吊</a></span> <span class="post-author-weibo"><a href="javascript:;" rel="nofollow" target="_blank">就是那么帅</a></span>
+			<span class="post-author-name">小文</span><span class="post-author-url"><a href="javascript:;" rel="nofollow" target="_blank">PHP开发工程师</a></span> <span class="post-author-weibo"><a href="javascript:;" rel="nofollow" target="_blank">专注后端开发</a></span>
 		</div>
 		<div class="author-description">生活是一场戏，主角当累了，你亦可成为观众，停下脚步，歇一歇</div>
 	</div>
@@ -60,7 +60,7 @@
 		<ul class="related_img">
 			@foreach($seminar_articles as $v)
 			<li>
-			<a href="{{url('art')}}/{{$v['id']}}" title="{{$v['name']}}" target="_blank"><img src="{{asset('resources/views/home/style/images/default.gif')}}" data-echo="{{$v['cover']}}" alt="{{$v['name']}}" class="thumbnail thumbnailxm">
+			<a href="{{url('art')}}/{{$v['id']}}" title="{{$v['name']}}" target="_blank"><img src="{{asset('resources/views/home/style/images/default.gif')}}" data-echo="{{$v['cover']}}?imageView2/1/w/210/h/130" alt="{{$v['name']}}" class="thumbnail thumbnailxm">
 			<h2>{{$v['name']}}</h2>
 			</a>
             </li>

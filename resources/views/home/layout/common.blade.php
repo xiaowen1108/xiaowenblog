@@ -22,10 +22,10 @@
            /*SyntaxHighlighter.all(); */
     </script>
     <style>
-        .thumbnailxm{
-            height:130px!important;
-            width: 210px!important;
-        }
+        /*.thumbnailxm{*/
+            /*height:130px!important;*/
+            /*width: 210px!important;*/
+        /*}*/
         div.loading{
             display: block;
             height: 100%;
@@ -43,6 +43,9 @@
             right: 0;
             bottom: 0;
         }*/
+        .code{word-break: break-all!important;}
+        #feedAv{ margin-top: -250px!important;transform: scale(0);}
+        #MZAD_POP_PLACEHOLDER{display: none!important;}
     </style>
 </head>
 <body class="custom-background">
@@ -107,9 +110,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebox  widget_vfilmtime_ad">
+                {{--<div class="sidebox  widget_vfilmtime_ad">
                     <a href="javascript:;" target="_blank"><img src="{{asset('resources/views/home/style/picture/zhifubao.png')}}" title="小文blog" width="100%" height="auto"></a>
-                </div>
+                </div>--}}
             </div>
         </div>
         @show
@@ -130,7 +133,7 @@
             </form>            
         </div>
         <div class="sidebox  widget_vfilmtime_ad">
-            <a href="javascript:;" target="_blank"><img src="{{asset('resources/views/home/style/picture/dog.jpg')}}" title="小文blog" width="100%" height="auto"></a>
+            <a href="javascript:;" target="_blank"><img src="{{asset('resources/views/home/style/picture/cat.jpg')}}" title="小文blog" width="100%" height="auto"></a>
         </div>
         <div class="sidebox  widget_vfilm_tab">
             <div id="tab-title" class="investment_title">
@@ -156,7 +159,7 @@
         </div><div class="sidebox  widget_vfilm_recommend"><h2>推荐阅读</h2><ul>
                 @foreach($recom as $v)
                 <li class= "tuijian">
-                    <a href="{{url('art')}}/{{$v['id']}}" title="{{$v->name}}" ><img src="{{asset('resources/views/home/style/images/default.gif')}}" alt="{{$v->name}}" class="thumbnail thumbnailxm" style="width:222px!important;height:132px!important;" data-echo="{{$v->cover}}"/><span>{{$v->name}}</span> </a>
+                    <a href="{{url('art')}}/{{$v['id']}}" title="{{$v->name}}" ><img src="{{asset('resources/views/home/style/images/default.gif')}}" alt="{{$v->name}}" class="thumbnail thumbnailxm" style="width:222px!important;height:132px!important;" data-echo="{{$v->cover}}?imageView2/1/w/210/h/130"/><span>{{$v->name}}</span> </a>
                 </li>
                 @endforeach
             </ul>
@@ -191,7 +194,6 @@
     font: 12px/2.1 "Century Gothic","Microsoft yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 20px;
     z-index: 9999;
-}
 }
 .share_main {
     position: relative;
@@ -310,6 +312,7 @@
 </script>
 <!--表单提交-->
 {!!Config::get('web.baidu')!!}
+{{--<script type='text/javascript' src='{{asset('resources/views/home/style/js/dig.js?version=2')}}'></script>--}}
 <script>
     $(document).pjax('a', '#pjax-container');
     $(document).on("pjax:timeout", function(event) {
@@ -320,6 +323,7 @@
     //pjax链接点击后显示加载动画；
     $("div.loading").css("display", "block");
     });
+    /*var refer = window.location.href;*/
     $(document).on('pjax:complete', function() {
         $("div.loading").css("display", "none");      
         echo.init({
@@ -342,20 +346,20 @@
         //pajx_loadDuodsuo();
         window.changyan = undefined;window.cyan = undefined;
         $.getScript("http://changyan.sohu.com/upload/changyan.js", function(){window.changyan.api.config({appid: "cyt30bSHE",conf: "prod_0e561974add5b2cbd2189046e6e8ee16"});});
+
         SyntaxHighlighter.highlight();
         /*$(".pjax_loading").css("display", "none");*/
+        //打点上报
+        /*console.log(refer);
+        dig(refer);
+        refer = window.location.href;*/
     });
-    function pajx_loadDuodsuo(){
-    var dus=$(".ds-thread");
-    if($(dus).length==1){
-        var el = document.createElement('div');
-        el.setAttribute('data-thread-key',$(dus).attr("data-thread-key"));//必选参数
-        el.setAttribute('data-url',$(dus).attr("data-url"));
-        DUOSHUO.EmbedThread(el);
-        $(dus).html(el);        
-    }
-    }
+    /*$(function () {
+        dig();
+    })*/
 </script>
+
 <script type='text/javascript' src='{{asset('resources/views/home/style/js/input.js')}}'></script>
+
 </body>
 </html>

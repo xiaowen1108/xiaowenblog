@@ -114,6 +114,7 @@ class ArticleController extends BaseController
         $info = Article::find($id)->toArray();
         //先将原来的全部减一
         if($info['tags']){
+            $input['tags'] = str_replace('，',',',$input['tags']);
             $info['tags'] = explode(',',$info['tags']);
             foreach($info['tags'] as $v){
                 Tags::where('name', $v)->decrement('article_num',1);
@@ -123,8 +124,9 @@ class ArticleController extends BaseController
         if($input['tags']){
             $input['tags'] = str_replace('，',',',$input['tags']);
             $tags = explode(',',$input['tags']);
+            $tagarr = Tags::lists('name')->toArray();
             foreach($tags as $v){
-                if (in_array($v, $info)) {
+                if (in_array($v, $tagarr)) {
                     //增加文章数目
                     Tags::where('name', $v)->increment('article_num',1);
                 } else {

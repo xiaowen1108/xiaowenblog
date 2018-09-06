@@ -1,4 +1,7 @@
-﻿@extends('home.layout.common')
+@extends('home.layout.common')
+@section('left_bar')
+    @parent
+@endsection
 @section('content')
                 <div id="post">
                     <div id="page_title">

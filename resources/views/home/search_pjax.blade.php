@@ -1,4 +1,4 @@
-﻿<div id="article">
+<div id="article">
 					@if(!$has)
 					<h2 class="search-title">没有找到有关的内容，给您推荐以下内容：</h2>
 					@endif
