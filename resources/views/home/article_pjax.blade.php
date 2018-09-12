@@ -19,7 +19,7 @@
 		<!--article-->
 	<div class="mt15"></div>
 	<div class="post-statement">
-		<p>转载请注明来自<a href="http://www.az1314.cn" title="小文博客"><strong>小文博客</strong></a>，本文标题：<a href="javascript:;" title="">{{$info['name']}}</a></p>
+		<p>转载请注明来自<a href="http://www.az1314.cn" title="小文blog"><strong>小文blog</strong></a>，本文标题：<a href="javascript:;" title="">{{$info['name']}}</a></p>
 		<p></p>
 	</div>
 	<div class="post-tags">标签：
