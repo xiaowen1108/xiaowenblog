@@ -9,7 +9,7 @@
                         <li><a href="{{$v->url}}" target="_blank">{{$v->name}}</a></li>
                         @endforeach
                     </ul>			    </nav>
-                <div class="credit">Copyright © 2016&nbsp;<a class="site-link" href="http://www.az1314.cn" title="小文blog" rel="home">小文blog</a>&nbsp;&nbsp;All Rights Reserved BY 小文 &nbsp;ICP备案号：<a href="http://www.miitbeian.gov.cn">豫ICP备16004541号-1</a>
+                <div class="credit">Copyright © 2016&nbsp;<a class="site-link" href="https://www.az1314.cn" title="小文blog" rel="home">小文blog</a>&nbsp;&nbsp;All Rights Reserved BY 小文 &nbsp;ICP备案号：<a href="http://www.miitbeian.gov.cn">豫ICP备16004541号-1</a>
                 </div>
             </div>
 

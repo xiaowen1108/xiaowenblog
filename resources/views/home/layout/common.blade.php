@@ -46,6 +46,7 @@
         .code{word-break: break-all!important;}
         #feedAv{ margin-top: -250px!important;transform: scale(0);}
         #MZAD_POP_PLACEHOLDER{display: none!important;}
+        #pop_ad{display: none!important;}
     </style>
 </head>
 <body class="custom-background">
@@ -106,7 +107,7 @@
                             <img src="" alt="微信二维码">
                         </div>--}}
                         <div class="">
-                            &nbsp;&nbsp;&nbsp;php交流群：<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=280cf831a89876ebe69c97975948bd073ecc8f8c886d14e924ea029a718eadc8"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="php学习交流" title="php学习交流"></a>
+                            &nbsp;&nbsp;&nbsp;php交流群：<a target="_blank" href="https://shang.qq.com/wpa/qunwpa?idkey=280cf831a89876ebe69c97975948bd073ecc8f8c886d14e924ea029a718eadc8"><img border="0" src="https://pub.idqqimg.com/wpa/images/group.png" alt="php学习交流" title="php学习交流"></a>
                         </div>
                     </div>
                 </div>
@@ -345,7 +346,7 @@
         }); 
         //pajx_loadDuodsuo();
         window.changyan = undefined;window.cyan = undefined;
-        $.getScript("http://changyan.sohu.com/upload/changyan.js", function(){window.changyan.api.config({appid: "cyt30bSHE",conf: "prod_0e561974add5b2cbd2189046e6e8ee16"});});
+        $.getScript("https://changyan.sohu.com/upload/changyan.js", function(){window.changyan.api.config({appid: "cyt30bSHE",conf: "prod_0e561974add5b2cbd2189046e6e8ee16"});});
 
         SyntaxHighlighter.highlight();
         /*$(".pjax_loading").css("display", "none");*/
